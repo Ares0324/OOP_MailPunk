@@ -6,7 +6,9 @@ string Message::getBody(){
 
 }
 
-string Message::getField(){}
+string Message::getField(){
+
+}
 
 void Message::deleteFromMailbox(){}
 

@@ -7,7 +7,6 @@
 
 namespace IMAP {
 class Message {
-  clistiter* cur;
   
 public:
 	Message(){}
