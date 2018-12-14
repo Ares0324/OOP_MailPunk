@@ -7,7 +7,10 @@
 
 namespace IMAP {
 class Message {
-  
+  unsigned int uid;
+  std::string subject;
+  std::string from;
+  std::string body;
 public:
 	Message(){}
 	/**
@@ -25,15 +28,7 @@ public:
 };
 
 class Session {
-  struct mailimap* imap;
-  int r;//for check_error
-
-  struct mailiamp_set* set;
-  struct mailiamp_fetch_type* fetch_stype;
-  struct mailiamp_fetch_att* fetch_att;
-  clist* fecth_result;
-  clist* cur;
-  
+  struct mailimap* imap; 
 public:
 	Session(std::function<void()> updateUI);
 
@@ -58,7 +53,6 @@ public:
 	 * this can only be performed after login
 	 */
 	void selectMailbox(std::string const& mailbox);
-
 	~Session();
 };
 }
